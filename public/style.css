@@ -1,0 +1,207 @@
+#editor {
+  background: #f1f1f1;
+  resize: vertical;
+  overflow: auto;
+  height: 400px;
+  outline: none;
+  padding: 20px;
+  border-radius: 10px;
+  border: 2px solid #028d79;
+}
+#editor ol li{
+  list-style: decimal;
+}
+#editor ul li{
+  list-style: initial;
+}
+.controls {
+  max-width: 600px;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  flex-wrap: wrap;
+  padding: 20px;
+  background: #919191;
+  margin-bottom: 15px;
+  box-shadow: 0px 2px 6px 0px #22222240;
+}
+.controls i {
+  color: #fff;
+  background: #505050;
+  padding: 5px 7px;
+  font-size: 22px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+.controls .uploaded_photos > div {
+  position: relative;
+}
+.controls .uploaded_photos > div .confirm {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  cursor: pointer;
+  width: 20px;
+  height: 20px;
+}
+.controls i:hover {
+  box-shadow: 0px 0px 0px 2px #07f1f1;
+}
+#editor:focus {
+  box-shadow: 0px 0px 1px 4px #069d8fa6;
+}
+.controls .imageMedia > div {
+  max-height: 300px;
+  overflow: auto;
+}
+.controls .media .parentMedia::before {
+  content: "";
+  position: absolute;
+  top: -20px;
+  left: 0;
+  border: 12px solid transparent;
+  border-bottom-color: #fff;
+}
+.controls .media {
+  position: absolute;
+  background: #fff;
+  width: 300px;
+  padding: 30px;
+  box-shadow: 0px 0px 6px 3px #1111114f;
+  top: 120%;
+  left: 0%;
+  z-index: 1;
+}
+#editor iframe {
+  display: block;
+  margin: 20px auto;
+}
+.uploaded_photos {
+  gap: 10px;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+.uploaded_photos img {
+  display: block;
+  margin: auto;
+  height: 60px;
+  width: 70px;
+  object-fit: cover;
+  padding: 3px;
+  background: #e3e3e3;
+  cursor: pointer;
+  box-shadow: 0px 2px 5px -1px #00000082;
+}
+#editor img {
+  max-width: 500px;
+  display: block;
+  margin: 20px auto;
+  box-shadow: 0px 3px 5px 1px #0000006b;
+}
+.controls .media input,.controls .media button{
+  font-size: 13px;
+}
+.controls .media h5 {
+  font-size: 18px;
+  text-transform: uppercase;
+  font-family: fantasy;
+  color: #4a4a4a;
+  user-select: none;
+}
+.colorMedia.media {
+  width: 200px;
+}
+.colorMedia .d-grid {
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 5px;
+}
+.colorMedia .d-grid a {
+  height: 30px;
+  cursor: pointer;
+}
+.confirm {
+  font-size: 12px;
+  background: #fb4a42;
+  color: #fff;
+  cursor: pointer;
+  position: relative;
+}
+
+span.confirmation {
+  position: absolute;
+  width: 110px;
+  height: 70px;
+  padding: 10px;
+  left: 50%;
+  background: tomato;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  display: grid;
+  place-items: center;
+  font-weight: 600;
+  text-shadow: 1px 1px 2px #000000ad;
+  font-size: 11px;
+  cursor: default;
+  z-index: 2;
+  animation: big 0.2s ease both;
+}
+
+.confirm > svg {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  display: grid;
+  place-items: center;
+  text-transform: uppercase;
+  z-index: 1;
+}
+
+@keyframes big {
+  0% {
+    transform: translate(-50%, -50%) scale(0);
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(1);
+  }
+}
+
+span.confirmation button {
+  border: none;
+  font-size: 10px;
+  padding: 3px;
+  font-weight: 600;
+  cursor: pointer;
+}
+.controls .move {
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  cursor: pointer;
+}
+svg.stopMedia {
+  cursor: pointer;
+  position: absolute;
+  top: 5px;
+}
+
+@media screen and (max-width:600px) {
+  #editor {
+    height: 300px;
+    padding: 15px;
+  }
+  .controls {
+    gap: 10px;
+  }
+  .controls i {
+    font-size: 18px;
+  }
+  .controls .media {
+    width: 260px;
+    padding: 15px;
+  }
+  .controls .media input, .controls .media button {
+    font-size: 11px;
+  }
+}
